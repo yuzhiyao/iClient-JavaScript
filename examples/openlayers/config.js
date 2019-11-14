@@ -449,6 +449,46 @@ var exampleConfig = {
                     thumbnail: "ol_iPortalQueryMaps.png",
                     fileName: "iPortalQueryMaps"
                 }]
+            },
+            "ip_queryservices": {
+                name: "服务列表",
+                name_en: "Web service list",
+                content: [{
+                    name: "服务列表",
+                    name_en: "web service list",
+                    thumbnail: "ol_iPortalQueryMaps.png",
+                    fileName: "iPortalQueryServices"
+                }]
+            },
+            "ip_querymapdashboards": {
+                name: "大屏列表",
+                name_en: "Web mapdashboard list",
+                content: [{
+                    name: "大屏列表",
+                    name_en: "web mapdashboard list",
+                    thumbnail: "ol_iPortalQueryMaps.png",
+                    fileName: "iPortalQueryMapdashboards"
+                }]
+            },
+            "ip_queryscenes": {
+                name: "场景列表",
+                name_en: "Web scene list",
+                content: [{
+                    name: "场景列表",
+                    name_en: "web scene list",
+                    thumbnail: "ol_iPortalQueryMaps.png",
+                    fileName: "iPortalQueryScenes"
+                }]
+            },
+            "ip_queryinsights": {
+                name: "洞察列表",
+                name_en: "Web insight list",
+                content: [{
+                    name: "洞察列表",
+                    name_en: "web insight list",
+                    thumbnail: "ol_iPortalQueryMaps.png",
+                    fileName: "iPortalQueryInsights"
+                }]
             }
         }
     },
