@@ -4,3 +4,4 @@ src/classic/resource/*
 src/classic/theme/*
 src/common/style/CartoCSS.js
 test
+libs/*
