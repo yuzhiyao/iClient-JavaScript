@@ -189,7 +189,8 @@ export class TileSuperMapRest extends ol.source.TileImage {
          * @description 获取新建图层地址。
          */
         function createLayerUrl() {
-            this._layerUrl = layerUrl + encodeURI(getRequestParamString.call(this));
+            // this._layerUrl = layerUrl + encodeURI(getRequestParamString.call(this));
+            this._layerUrl = layerUrl + getRequestParamString.call(this);
             //为url添加安全认证信息片段
             this._layerUrl = appendCredential(this._layerUrl, options.serverType);
             return this._layerUrl;
@@ -203,7 +204,11 @@ export class TileSuperMapRest extends ol.source.TileImage {
             this.requestParams = this.requestParams || getAllRequestParams.call(this);
             var params = [];
             for (var key in this.requestParams) {
-                params.push(key + "=" + this.requestParams[key]);
+                // params.push(key + "=" + this.requestParams[key]);
+                params.push(key + "=" + encodeURIComponent(this.requestParams[key]));
+                //请注意 encodeURIComponent() 函数 与 encodeURI() 函数的区别之处，前者假定它的参数是 URI 的一部分（比如协议、主机名、路径或查询字符串）。因此 encodeURIComponent() 函数将转义用于分隔 URI 各个部分的标点符号。
+                //解决APE影像分析时候 rasterfunction 符号未编码，导致经过iptl代理后，不能正常的请求到图片
+                // 直接使用以前的encodeURL()后的rul访问iServer是OK的，但是通过iptl代理却不行，理论上代理存在问题 
             }
             return params.join('&');
         }
